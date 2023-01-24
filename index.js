@@ -16,11 +16,11 @@ function weightCalculation(e)
     let weightDifference = currentWeightValue - targetWeightValue;
     if(weightDifference < 0)
     {
-        weightOutput = weightDifference*-1/weightDaysValue;
+        weightOutput = Math.round(weightDifference*-1/weightDaysValue*10)/10;
     }
     else
     {
-        weightOutput = weightDifference/weightDaysValue;
+        weightOutput = Math.round(weightDifference/weightDaysValue*10)/10;
     }
     const output = document.getElementById("outputValue");
     output.innerHTML = weightOutput;
