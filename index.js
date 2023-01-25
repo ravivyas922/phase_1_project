@@ -26,3 +26,17 @@ function weightCalculation(e)
     output.innerHTML = weightOutput;
 }
 
+const fetchButton = document.getElementById("fetch");
+fetchButton.addEventListener('click',function(){
+fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+	.then(data => data.json())
+	.then(response => mealInfo(response));
+
+function mealInfo(response)
+{
+    const responseHTML = document.getElementById('randomMealOutput');
+    console.log(response.meals[0]);
+    responseHTML.innerHTML = `Name of Meal: ${response.meals[0].strMeal}`;
+}
+
+});
