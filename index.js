@@ -48,7 +48,7 @@ function mealInfo(response)
 const mealButton = document.getElementById("mealButton");
 mealButton.addEventListener('click',function()
 {
-    let meals = document.getElementById('meals').value;
+    let mealSelection = document.getElementById('meals').value;
     console.log(meals);
     let mealArray = [
         { meal: "Stir Fry", cuisine: "Asian" },
@@ -61,13 +61,35 @@ mealButton.addEventListener('click',function()
   
     function filterMeals(arr)
 {
-        if(arr.cuisine === meals)
+        if(arr.cuisine === mealSelection)
         {
             console.log(arr.meal);
         }
 }
 })
 
+const workoutButton = document.getElementById("workoutButton");
+mealButton.addEventListener('click',function()
+{
+    let workoutSelection = document.getElementById('workouts').value;
+    console.log(workouts);
+    let workoutArray = [
+        { workout: "Barbell Squat", target: "Legs" },
+        { workout: "Leg Press", target: "Legs" },
+        { workout: "Split Squats", target: "Legs" },
+        { workout: "Tricep Pulldown", target: "Arms" },
+        { workout: "Bench Press", target: "Chest" },
+       ];
+    const finalWorkoutArray = workoutArray.filter(filterWorkouts);
+  
+    function filterWorkouts(arr)
+{
+        if(arr.target === workoutSelection)
+        {
+            console.log(arr.workout);
+        }
+}
+})
 
 
 
