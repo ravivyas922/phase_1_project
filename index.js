@@ -1,4 +1,5 @@
 
+// Weight Calculator Section
 
 const form = document.getElementById('Calculator');
 const currentWeight = document.getElementById("currentWeight");
@@ -23,10 +24,12 @@ function weightCalculation(e)
         weightOutput = Math.round(weightDifference/weightDaysValue*10)/10;
     }
     const output = document.getElementById("outputValue");
-    output.innerHTML = weightOutput;
+    output.textContent = weightOutput;
 }
 
-const fetchButton = document.getElementById("fetch");
+// Fetch Random Meal Section 
+
+const fetchButton = document.getElementById("randomMealButton");
 fetchButton.addEventListener('click',function(){
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 	.then(data => data.json())
@@ -36,7 +39,35 @@ function mealInfo(response)
 {
     const responseHTML = document.getElementById('randomMealOutput');
     console.log(response.meals[0]);
-    responseHTML.innerHTML = `Name of Meal: ${response.meals[0].strMeal}`;
+    responseHTML.textContent = `Name of Meal: ${response.meals[0].strMeal}`;
 }
-
 });
+
+// Meal Selection Section
+
+const mealButton = document.getElementById("mealButton");
+mealButton.addEventListener('click',function()
+{
+    let meals = document.getElementById('meals').value;
+    console.log(meals);
+    let mealArray = [
+        { meal: "Stir Fry", cuisine: "Asian" },
+        { meal: "Burger", cuisine: "American" },
+        { meal: "Pasta", cuisine: "Italian" },
+        { meal: "Kabob", cuisine: "Mediterranean" },
+        { meal: "Veggie Burger", cuisine: "Vegetarian" }
+       ];
+    const finalMealArray = mealArray.filter(filterMeals);
+  
+    function filterMeals(arr)
+{
+        if(arr.cuisine === meals)
+        {
+            console.log(arr.meal);
+        }
+}
+})
+
+
+
+
