@@ -25,27 +25,8 @@ function weightCalculation(e)
     }
     const output = document.getElementById("outputValue");
     output.textContent = weightOutput;
-}
 
-// Fetch Random Meal Section 
-
-const fetchButton = document.getElementById("randomMealButton");
-fetchButton.addEventListener('click',function(){
-fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-	.then(data => data.json())
-	.then(response => mealInfo(response));
-
-function mealInfo(response)
-{
-    const randomMealCuisine = document.getElementById('randomMealCuisine');
-    const randomMealOutput = document.getElementById('randomMealOutput');
-    const randomMealSource = document.getElementById('randomMealSource');
-    randomMealCuisine.innerHTML = `Meal Cuisine: ${response.meals[0].strArea}`;
-    randomMealOutput.innerHTML = `Name of Meal: ${response.meals[0].strMeal}`;
-    randomMealSource.innerHTML = `Meal Link: ${response.meals[0].strSource}`;
 }
-}
-);
 
 // Meal Selection Section
 
@@ -78,6 +59,28 @@ mealButton.addEventListener('click',function()
         }
 }
 });
+
+// Fetch Random Meal Section 
+
+const fetchButton = document.getElementById("randomMealButton");
+fetchButton.addEventListener('click',function(){
+fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+	.then(data => data.json())
+	.then(response => mealInfo(response));
+
+function mealInfo(response)
+{
+    const randomMealCuisine = document.getElementById('randomMealCuisine');
+    const randomMealOutput = document.getElementById('randomMealOutput');
+    const randomMealSource = document.getElementById('randomMealSource');
+    randomMealCuisine.innerHTML = `Meal Cuisine: ${response.meals[0].strArea}`;
+    randomMealOutput.innerHTML = `Name of Meal: ${response.meals[0].strMeal}`;
+    randomMealSource.innerHTML = `Meal Link: ${response.meals[0].strSource}`;
+}
+}
+);
+
+// Workout Selector Section
 
 const workoutButton = document.getElementById("workoutButton");
 workoutButton.addEventListener('click',function()
@@ -127,5 +130,7 @@ workoutButton.addEventListener('click',function()
 }
 })
 
-
-
+// DOM Content Loaded
+window.addEventListener('DOMContentLoaded', (event) => {
+    alert('Click OK to Enter the Site');
+});
