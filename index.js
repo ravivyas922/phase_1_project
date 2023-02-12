@@ -100,10 +100,10 @@ workoutButton.addEventListener('click',function()
     let workout2 = document.getElementById("workout2");
     let workout3 = document.getElementById("workout3");
     let workout4 = document.getElementById("workout4");
-    workout1.innerHTML = finalWorkoutArray[0].workout;
-    workout2.innerHTML = finalWorkoutArray[1].workout;
-    workout3.innerHTML = finalWorkoutArray[2].workout;
-    workout4.innerHTML = finalWorkoutArray[3].workout;
+    workout1.innerHTML = `Workout 1: ${finalWorkoutArray[0].workout}`;
+    workout2.innerHTML = `Workout 2: ${finalWorkoutArray[1].workout}`;
+    workout3.innerHTML = `Workout 3: ${finalWorkoutArray[2].workout}`;
+    workout4.innerHTML = `Workout 4: ${finalWorkoutArray[3].workout}`;
     function filterWorkouts(arr)
 {
         if(arr.target === workoutSelection)
