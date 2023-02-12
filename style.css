@@ -1,0 +1,32 @@
+body {
+    background-color: gainsboro;
+  }
+h1{
+    font-family: verdana;
+    padding: 10px;
+    position: relative;
+    margin-left: 200px;
+
+
+}
+h3 {
+    color: blue;
+    font-family: verdana;
+    display: flex;
+
+}
+.currentWeightGroup
+{
+    display: inline-block;
+}
+#Calculator
+{
+    display: inline-block;
+    font-size: 25px;
+    border: 50 px;
+    
+}
+input
+{
+
+}

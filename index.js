@@ -130,7 +130,9 @@ workoutButton.addEventListener('click',function()
 }
 })
 
-// DOM Content Loaded
+/* DOM Content Loaded
 window.addEventListener('DOMContentLoaded', (event) => {
     alert('Click OK to Enter the Site');
 });
+
+*/
