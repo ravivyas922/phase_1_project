@@ -37,19 +37,22 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
 function mealInfo(response)
 {
-    const responseHTML = document.getElementById('randomMealOutput');
-    console.log(response.meals[0]);
-    responseHTML.textContent = `Name of Meal: ${response.meals[0].strMeal}`;
+    const randomMealCuisine = document.getElementById('randomMealCuisine');
+    const randomMealOutput = document.getElementById('randomMealOutput');
+    const randomMealSource = document.getElementById('randomMealSource');
+    randomMealCuisine.innerHTML = `Meal Cuisine: ${response.meals[0].strArea}`;
+    randomMealOutput.innerHTML = `Name of Meal: ${response.meals[0].strMeal}`;
+    randomMealSource.innerHTML = `Meal Link: ${response.meals[0].strSource}`;
 }
-});
+}
+);
 
 // Meal Selection Section
 
 const mealButton = document.getElementById("mealButton");
 mealButton.addEventListener('click',function()
 {
-    let mealSelection = document.getElementById('meals').value;
-    console.log(mealSelection);
+    let mealValue = document.getElementById('meals').value;
     let mealArray = [
         { meal: "Udon Noodles", cuisine: "Asian", youtube: "https://www.youtube.com/watch?v=StwmhVL1Gso"},
         { meal: "Fried Chicken", cuisine: "American", youtube: "https://www.youtube.com/watch?v=Y7wJw5aBM-I" },
@@ -60,10 +63,12 @@ mealButton.addEventListener('click',function()
     const finalMealArray = mealArray.filter(filterMeals);
   
     let mealAnchor= document.querySelector("a");
-    mealAnchor.href = finalMealArray.youtube;
+    mealAnchor.href = finalMealArray[0].youtube;
+    let mealSelection = document.getElementById("mealSelection");
+    mealSelection.innerHTML = `Meal: ${finalMealArray[0].meal}`;
     function filterMeals(arr)
 {
-        if(arr.cuisine === mealSelection)
+        if(arr.cuisine === mealValue)
         {
             return true;
         }
@@ -72,7 +77,7 @@ mealButton.addEventListener('click',function()
             return false; 
         }
 }
-})
+});
 
 const workoutButton = document.getElementById("workoutButton");
 workoutButton.addEventListener('click',function()
@@ -101,7 +106,6 @@ workoutButton.addEventListener('click',function()
         { workout: "Lat Pulldown", target: "Back" },
        ];
     const finalWorkoutArray = workoutArray.filter(filterWorkouts);
-    console.log(finalWorkoutArray);
     let workout1 = document.getElementById("workout1");
     let workout2 = document.getElementById("workout2");
     let workout3 = document.getElementById("workout3");

@@ -5,7 +5,8 @@
 </head>
 
 <body>
-<h1 id = "test">Weight Loss/Gain Calculator</h1>
+<h1>Ravi's Health Hotspot</h1>
+<h3 id = "Header1">Weight Loss/Gain Calculator</h1>
 <form id="Calculator">
     <div>Current Weight in lbs:</div>
     <input type="text" id="currentWeight"><br>
@@ -20,7 +21,8 @@
 <div id = "weightOutput">Lbs to Gain/Lose Per Week: </div>
 <span id = "outputValue"></span>
 </div>
-<br><br>
+<br>
+<h3 id = "Header2">Meal Selector</h1>
 <label for="meals">Choose a cuisine:</label>
 <select name="meals" id="meals">
     <option value="Asian">Asian</option>
@@ -30,14 +32,21 @@
     <option value="Breakfast">Breakfast</option>
 </select>
 <button id = "mealButton">Submit</button>
-<div id = "mealSelection"></div>
+<br><br>
+<div id = "mealSelection">Meal: </div>
 <br>
-<a href="#">Meal Youtube Link</a>
+<a href="" target="_blank">Meal Youtube Link</a>
 
+<br>
+<h3 id = "Header3">Want a Random Meal? Click Below:</h3>
+<button id = "randomMealButton">Click For Random Meal</button>
 <br><br>
-<button id = "randomMealButton">Fetch</button>
+
+<div id = "randomMealCuisine"></div>
 <div id = "randomMealOutput"></div>
-<br><br>
+<div id = "randomMealSource"></div>
+<br>
+<h3 id = "Header4">Workout Split Selector</h3>
 <label for="workouts">Choose a workout target:</label>
 <select name="workouts" id="workouts">
     <option value="Chest">Chest</option>
