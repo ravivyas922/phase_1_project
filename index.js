@@ -51,11 +51,11 @@ mealButton.addEventListener('click',function()
     let mealSelection = document.getElementById('meals').value;
     console.log(mealSelection);
     let mealArray = [
-        { meal: "Stir Fry", cuisine: "Asian" },
-        { meal: "Burger", cuisine: "American" },
-        { meal: "Pasta", cuisine: "Italian" },
-        { meal: "Kabob", cuisine: "Mediterranean" },
-        { meal: "Veggie Burger", cuisine: "Vegetarian" }
+        { meal: "Udon Noodles", cuisine: "Asian", youtube: "https://www.youtube.com/watch?v=StwmhVL1Gso"},
+        { meal: "Fried Chicken", cuisine: "American", youtube: "https://www.youtube.com/watch?v=Y7wJw5aBM-I" },
+        { meal: "Burrito", cuisine: "Mexican", youtube: "https://www.youtube.com/watch?v=88WR2pkSwko"},
+        { meal: "Chicken and Rice", cuisine: "Indian", youtube: "https://www.youtube.com/watch?v=qQq33CEzTic" },
+        { meal: "Frittata", cuisine: "Breakfast", youtube: "https://www.youtube.com/watch?v=QIgHTm5bHlc"}
        ];
     const finalMealArray = mealArray.filter(filterMeals);
   
@@ -72,13 +72,13 @@ const workoutButton = document.getElementById("workoutButton");
 workoutButton.addEventListener('click',function()
 {
     let workoutSelection = document.getElementById('workouts').value;
-    console.log(workoutSelection);
     let workoutArray = [
         { workout: "Barbell Squat", target: "Legs"},
         { workout: "Leg Press", target: "Legs" },
         { workout: "Calf Raises", target: "Legs"},
         { workout: "Romanian Deadlift", target: "Legs" },
         { workout: "Tricep Pulldown", target: "Arms" },
+        { workout: "Dumbbell Tricep Extension", target: "Arms" },
         { workout: "Bicep Curl", target: "Arms" },
         { workout: "Forearm Curls", target: "Arms" },
         { workout: "Flat Bench Press", target: "Chest" },
@@ -87,6 +87,7 @@ workoutButton.addEventListener('click',function()
         { workout: "Decline Bench Press", target: "Chest" },
         { workout: "Shoulder Press", target: "Shoulders" },
         { workout: "Lateral Raises", target: "Shoulders" },
+        { workout: "Cable Front Raise", target: "Shoulders" },
         { workout: "Rear Delt Flys", target: "Shoulders" },
         { workout: "Barbell Bent Over Row", target: "Back" },
         { workout: "Seated Row", target: "Back" },
@@ -94,13 +95,25 @@ workoutButton.addEventListener('click',function()
         { workout: "Lat Pulldown", target: "Back" },
        ];
     const finalWorkoutArray = workoutArray.filter(filterWorkouts);
-  
+    console.log(finalWorkoutArray);
+    let workout1 = document.getElementById("workout1");
+    let workout2 = document.getElementById("workout2");
+    let workout3 = document.getElementById("workout3");
+    let workout4 = document.getElementById("workout4");
+    workout1.innerHTML = finalWorkoutArray[0].workout;
+    workout2.innerHTML = finalWorkoutArray[1].workout;
+    workout3.innerHTML = finalWorkoutArray[2].workout;
+    workout4.innerHTML = finalWorkoutArray[3].workout;
     function filterWorkouts(arr)
 {
         if(arr.target === workoutSelection)
         {
-            console.log(arr.workout);
+            return true;
         }
+        else
+        {
+            return false;
+        }      
 }
 })
 
