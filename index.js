@@ -49,7 +49,7 @@ const mealButton = document.getElementById("mealButton");
 mealButton.addEventListener('click',function()
 {
     let mealSelection = document.getElementById('meals').value;
-    console.log(meals);
+    console.log(mealSelection);
     let mealArray = [
         { meal: "Stir Fry", cuisine: "Asian" },
         { meal: "Burger", cuisine: "American" },
@@ -69,16 +69,29 @@ mealButton.addEventListener('click',function()
 })
 
 const workoutButton = document.getElementById("workoutButton");
-mealButton.addEventListener('click',function()
+workoutButton.addEventListener('click',function()
 {
     let workoutSelection = document.getElementById('workouts').value;
-    console.log(workouts);
+    console.log(workoutSelection);
     let workoutArray = [
-        { workout: "Barbell Squat", target: "Legs" },
+        { workout: "Barbell Squat", target: "Legs"},
         { workout: "Leg Press", target: "Legs" },
-        { workout: "Split Squats", target: "Legs" },
+        { workout: "Calf Raises", target: "Legs"},
+        { workout: "Romanian Deadlift", target: "Legs" },
         { workout: "Tricep Pulldown", target: "Arms" },
-        { workout: "Bench Press", target: "Chest" },
+        { workout: "Bicep Curl", target: "Arms" },
+        { workout: "Forearm Curls", target: "Arms" },
+        { workout: "Flat Bench Press", target: "Chest" },
+        { workout: "Incline Bench Press", target: "Chest" },
+        { workout: "Cable Flys", target: "Chest" },
+        { workout: "Decline Bench Press", target: "Chest" },
+        { workout: "Shoulder Press", target: "Shoulders" },
+        { workout: "Lateral Raises", target: "Shoulders" },
+        { workout: "Rear Delt Flys", target: "Shoulders" },
+        { workout: "Barbell Bent Over Row", target: "Back" },
+        { workout: "Seated Row", target: "Back" },
+        { workout: "Deadlift", target: "Back" },
+        { workout: "Lat Pulldown", target: "Back" },
        ];
     const finalWorkoutArray = workoutArray.filter(filterWorkouts);
   
