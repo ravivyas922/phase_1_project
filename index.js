@@ -59,11 +59,17 @@ mealButton.addEventListener('click',function()
        ];
     const finalMealArray = mealArray.filter(filterMeals);
   
+    let mealAnchor= document.querySelector("a");
+    mealAnchor.href = finalMealArray.youtube;
     function filterMeals(arr)
 {
         if(arr.cuisine === mealSelection)
         {
-            console.log(arr.meal);
+            return true;
+        }
+        else
+        {
+            return false; 
         }
 }
 })
