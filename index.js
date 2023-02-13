@@ -21,6 +21,8 @@ const targetWeight = document.getElementById("targetWeight");
 const weightDays = document.getElementById("weightDays");
 form.addEventListener("submit",weightCalculation);
 
+//Takes input values from the user and calculates the expected lbs to lose per day
+
 function weightCalculation(e)
 {
     e.preventDefault();
@@ -57,6 +59,8 @@ mealButton.addEventListener('click',function()
        ];
     const finalMealArray = mealArray.filter(filterMeals);
   
+    //Attaches the Youtube link for the meal selected onto the web page
+
     let mealAnchor= document.querySelector("a");
     mealAnchor.href = finalMealArray[0].youtube;
     let mealSelection = document.getElementById("mealSelection");
@@ -82,6 +86,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 	.then(data => data.json())
 	.then(response => mealInfo(response));
 
+//Assigns HTML elements values from the database
 function mealInfo(response)
 {
     const randomMealCuisine = document.getElementById('randomMealCuisine');
@@ -97,6 +102,8 @@ function mealInfo(response)
 // Workout Selector Section
 
 const workoutButton = document.getElementById("workoutButton");
+
+//Array of Objects containing each workout and each target muscle group
 workoutButton.addEventListener('click',function()
 {
     let workoutSelection = document.getElementById('workouts').value;
@@ -122,6 +129,9 @@ workoutButton.addEventListener('click',function()
         { workout: "Deadlift", target: "Back" },
         { workout: "Lat Pulldown", target: "Back" },
        ];
+
+    //Filters workouts based off the user selection and assigns them to elements on the webpage
+
     const finalWorkoutArray = workoutArray.filter(filterWorkouts);
     let workout1 = document.getElementById("workout1");
     let workout2 = document.getElementById("workout2");
