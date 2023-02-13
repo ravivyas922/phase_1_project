@@ -15,7 +15,7 @@ The goal of this webpage is to provide users the ability to help attain their `f
 
 ## How to Use
 
-***There are three main sections to this webpage: Weight Calculator Section, Workout Selection Section, Meal Selection Section:***
+***There are three main sections to this webpage: Weight Calculator Section, Workout Selection Section, Meal Selection Section.***
 
 
 1. ***To use the Weight Calculator Section, input your current weight, target weight, and days expected to achieve this goal. This will calculate the amount of lbs expected to lose per week to meet your weight goals.***
@@ -26,7 +26,7 @@ The goal of this webpage is to provide users the ability to help attain their `f
 
 > ![image](GIFFolder/Walkthrough2.gif)
 
-3. ***The Meal Selection Section has two parts: a pre-determined meal list and a random meal generator. The first part is a predetermined list will provide a variety of different cuisines, as well as the Youtube link associated with preparing that meal. The second part is a random meal generator connected to the Meal DB random recipe API. This section will provide a random cuisine, as well as a meal and the website with the meal recipe.***
+3. ***The Meal Selection Section has two parts: a pre-determined meal list and a random meal generator. The first section will provide a variety of different cuisines, as well as the Youtube link associated with preparing that meal. The second section is a random meal generator connected to the Meal DB random recipe API. This section will provide a random cuisine, as well as a meal name and website with the meal recipe.***
 
 >![image](GIFFolder/Walkthrough3.gif)
 
