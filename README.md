@@ -8,10 +8,10 @@ The goal of this webpage is to provide users the ability to help attain their `f
 
 ## Features
 
-- This site allows the user to estimate weight gain/loss goals over certain periods of time
-- This site allows the user to pick from a handful of pre-determined health-conscious meals, and provides a YouTube tutorial on how to make those meals
-- This site allows the user to access the [The MealDB Random Meal Database](https://www.themealdb.com/api/json/v1/1/random.php) in order to gain more meal inspiration
-- This site allows the user to pick a training program for lifting weights based off of the muscle group that needs to be targeted
+- Estimate weight gain/loss goals over certain periods of time
+- Pick from a handful of pre-determined health-conscious meals, and provides a YouTube tutorial on how to make those meals
+- Access the [The MealDB Random Meal Database](https://www.themealdb.com/api/json/v1/1/random.php) in order to gain more meal inspiration
+- Pick a training program for lifting weights based off of the muscle group that needs to be targeted
 
 ## How to Use
 
