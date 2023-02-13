@@ -1,4 +1,18 @@
 
+//Header Underline Section
+
+const head = document.getElementById("header");
+head.addEventListener("mouseover",function()
+{
+head.style.textDecoration = "underline";
+}
+);
+head.addEventListener("mouseout",function()
+{
+head.style.textDecoration = "";
+}
+);
+
 // Weight Calculator Section
 
 const form = document.getElementById('Calculator');
