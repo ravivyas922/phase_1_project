@@ -24,7 +24,7 @@ function weightCalculation(e)
         weightOutput = Math.round(weightDifference/weightDaysValue*10)/10;
     }
     const output = document.getElementById("outputValue");
-    output.textContent = weightOutput;
+    output.textContent = `Lbs to Gain/Lose Per Week: ${weightOutput}`;
 
 }
 
@@ -129,6 +129,10 @@ workoutButton.addEventListener('click',function()
         }      
 }
 })
+
+//Mouse Over/Leave Header Section
+
+
 
 /* DOM Content Loaded
 window.addEventListener('DOMContentLoaded', (event) => {

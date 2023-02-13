@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Ravi's Health Hotspot</h1>
+<div class = "weightSection">
 <h3 id = "Header1">Weight Loss/Gain Calculator</h1>
 <form id="Calculator">
         <div>Current Weight in lbs:</div>
@@ -18,10 +19,32 @@
   </form> 
   <br>
   <div class = "output">
-<div id = "weightOutput">Lbs to Gain/Lose Per Week: </div>
-<span id = "outputValue"></span>
+<div id = "outputValue">
 </div>
+</div>
+</div>
+<div class = "workoutSection">
+<h3 id = "Header4">Workout Split Selector</h3>
+<label for="workouts">Choose a workout target:</label>
 <br>
+<select name="workouts" id="workouts">
+    <option value="Chest">Chest</option>
+    <option value="Back">Back</option>
+    <option value="Arms">Arms</option>
+    <option value="Shoulders">Shoulders</option>
+    <option value="Legs">Legs</option>
+</select>
+<br>
+<button id = "workoutButton">Submit</button>
+<br>
+<div class = "workoutList"></div>
+<div id = "workout1"></div>
+<div id = "workout2"></div>
+<div id = "workout3"></div>
+<div id = "workout4"></div>
+</div>
+
+<div class = "mealSection">
 <h3 id = "Header2">Meal Selector</h1>
 <label for="meals">Choose a cuisine:</label>
 <select name="meals" id="meals">
@@ -32,32 +55,19 @@
     <option value="Breakfast">Breakfast</option>
 </select>
 <button id = "mealButton">Select</button>
-<br><br>
 <div id = "mealSelection">Meal: </div>
 <br>
 
 <a href="" target="_blank">Meal Youtube Link</a>
+</div>
 
-<br>
+<div class = "randomMealSection">
 <h3 id = "Header3">Want a Random Meal? Click Below:</h3>
 <button id = "randomMealButton">Click For Random Meal</button>
-<br><br>
+<div class = "randomMealInfo">
 <div id = "randomMealCuisine"></div>
 <div id = "randomMealOutput"></div>
 <div id = "randomMealSource"></div>
-<br>
-<h3 id = "Header4">Workout Split Selector</h3>
-<label for="workouts">Choose a workout target:</label>
-<select name="workouts" id="workouts">
-    <option value="Chest">Chest</option>
-    <option value="Back">Back</option>
-    <option value="Arms">Arms</option>
-    <option value="Shoulders">Shoulders</option>
-    <option value="Legs">Legs</option>
-</select>
-<button id = "workoutButton">Submit</button>
-<div class = "workoutList"></div>
-<div id = "workout1"></div>
-<div id = "workout2"></div>
-<div id = "workout3"></div>
-<div id = "workout4"></div>
+</div>
+</div>
+
