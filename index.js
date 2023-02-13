@@ -131,6 +131,7 @@ workoutButton.addEventListener('click',function()
     workout2.innerHTML = `Workout 2: ${finalWorkoutArray[1].workout}`;
     workout3.innerHTML = `Workout 3: ${finalWorkoutArray[2].workout}`;
     workout4.innerHTML = `Workout 4: ${finalWorkoutArray[3].workout}`;
+    
     function filterWorkouts(arr)
 {
         if(arr.target === workoutSelection)
@@ -143,10 +144,6 @@ workoutButton.addEventListener('click',function()
         }      
 }
 })
-
-//Mouse Over/Leave Header Section
-
-
 
 /* DOM Content Loaded
 window.addEventListener('DOMContentLoaded', (event) => {
