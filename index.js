@@ -28,19 +28,19 @@ function weightCalculation(e)
     e.preventDefault();
     const currentWeightValue = currentWeight.value;
     const targetWeightValue = targetWeight.value;
-    const weightDaysValue = weightDays.value;
+    const weightWeeksValue = weightWeeks.value;
     let weightOutput;
     let weightDifference = currentWeightValue - targetWeightValue;
     if(weightDifference < 0)
     {
-        weightOutput = Math.round(weightDifference*-1/weightDaysValue*10)/10;
+        weightOutput = Math.round(weightDifference*-1/weightWeeksValue*10)/10;
     }
     else
     {
-        weightOutput = Math.round(weightDifference/weightDaysValue*10)/10;
+        weightOutput = Math.round(weightDifference/weightWeeksValue*10)/10;
     }
     const output = document.getElementById("outputValue");
-    output.textContent = `Lbs to Gain/Lose Per Week: ${weightOutput}`;
+    output.textContent = `Lbs to Gain/Lose Per Day: ${Math.round(weightOutput*10/7)/10}`;
 
 }
 
@@ -84,8 +84,12 @@ const fetchButton = document.getElementById("randomMealButton");
 fetchButton.addEventListener('click',function(){
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 	.then(data => data.json())
-	.then(response => mealInfo(response));
-
+	.then(response =>{
+        console.log(1);
+        mealInfo(response)
+        }
+        );
+        console.log(2);
 //Assigns HTML elements values from the database
 function mealInfo(response)
 {
