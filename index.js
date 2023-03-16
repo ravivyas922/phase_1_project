@@ -49,18 +49,41 @@ function weightCalculation(e)
 const mealButton = document.getElementById("mealButton");
 mealButton.addEventListener('click',function()
 {
-    let mealValue = document.getElementById('meals').value;
-    let mealArray = [
-        { meal: "Udon Noodles", cuisine: "Asian", youtube: "https://www.youtube.com/watch?v=StwmhVL1Gso"},
-        { meal: "Fried Chicken", cuisine: "American", youtube: "https://www.youtube.com/watch?v=Y7wJw5aBM-I" },
-        { meal: "Burrito", cuisine: "Mexican", youtube: "https://www.youtube.com/watch?v=88WR2pkSwko"},
-        { meal: "Chicken and Rice", cuisine: "Indian", youtube: "https://www.youtube.com/watch?v=qQq33CEzTic" },
-        { meal: "Frittata", cuisine: "Breakfast", youtube: "https://www.youtube.com/watch?v=QIgHTm5bHlc"}
-       ];
-    const finalMealArray = mealArray.filter(filterMeals);
-  
-    //Attaches the Youtube link for the meal selected onto the web page
+    const mealValue = document.getElementById("meals").value;
+    fetch('http://localhost:3000/meals')
+        .then(response => response.json())
+        .then(data => 
+            
+        {
+            console.log(data);
+            const mealObject = data.filter(filterMeals);
+            let mealAnchor= document.querySelector("a");
+            mealAnchor.href = mealObject[0].youtube;
+            let mealSelection = document.getElementById("mealSelection");
+            mealSelection.innerHTML = `Meal: ${mealObject[0].name}`;
+        }
+            );
 
+
+function filterMeals(arr)
+{
+    if(arr.cuisine == mealValue)
+    {
+        return true;
+    }
+    else
+    {
+        return false; 
+    }
+}
+}
+);
+
+
+
+
+    //Attaches the Youtube link for the meal selected onto the web page
+/*
     let mealAnchor= document.querySelector("a");
     mealAnchor.href = finalMealArray[0].youtube;
     let mealSelection = document.getElementById("mealSelection");
@@ -77,28 +100,25 @@ mealButton.addEventListener('click',function()
         }
 }
 });
-
+*/
 // Fetch Random Meal Section 
 
 const fetchButton = document.getElementById("randomMealButton");
 fetchButton.addEventListener('click',function(){
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-	.then(data => data.json())
-	.then(response =>{
-        console.log(1);
-        mealInfo(response)
-        }
-        );
-        console.log(2);
-//Assigns HTML elements values from the database
-function mealInfo(response)
+	.then(response => response.json())
+	.then(data => randomMealInfo(data));
+
+
+    //Assigns HTML elements values from the database
+function randomMealInfo(data)
 {
     const randomMealCuisine = document.getElementById('randomMealCuisine');
     const randomMealOutput = document.getElementById('randomMealOutput');
     const randomMealSource = document.getElementById('randomMealSource');
-    randomMealCuisine.innerHTML = `Meal Cuisine: ${response.meals[0].strArea}`;
-    randomMealOutput.innerHTML = `Name of Meal: ${response.meals[0].strMeal}`;
-    randomMealSource.innerHTML = `Meal Link: ${response.meals[0].strSource}`;
+    randomMealCuisine.innerHTML = `Meal Cuisine: ${data.meals[0].strArea}`;
+    randomMealOutput.innerHTML = `Name of Meal: ${data.meals[0].strMeal}`;
+    randomMealSource.innerHTML = `Meal Link: ${data.meals[0].strSource}`;
 }
 }
 );

@@ -1,0 +1,40 @@
+{
+    "meals":[
+    { 
+      "id": 1,  
+      "name": "Udon Noodles",
+      "cuisine": "Asian", 
+      "youtube": "https://www.youtube.com/watch?v=StwmhVL1Gso"
+    },
+    
+    { 
+      "id": 2, 
+      "name": "Fried Chicken", 
+      "cuisine": "American", 
+      "youtube": "https://www.youtube.com/watch?v=Y7wJw5aBM-I" 
+    },
+    
+    { 
+      "id": 3, 
+      "name": "Burrito", 
+      "cuisine": "Mexican", 
+      "youtube": "https://www.youtube.com/watch?v=88WR2pkSwko"
+    },
+    
+    {
+      "id": 4, 
+      "name": "Chicken and Rice", 
+      "cuisine": "Indian", 
+      "youtube": "https://www.youtube.com/watch?v=qQq33CEzTic" 
+    },
+    
+    { 
+      "id": 5, 
+      "name": "Frittata", 
+      "cuisine": "Breakfast",
+      "youtube": "https://www.youtube.com/watch?v=QIgHTm5bHlc"
+    }
+    ]
+}
+
+
